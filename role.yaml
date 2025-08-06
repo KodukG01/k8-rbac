@@ -14,8 +14,8 @@ metadata:
   namespace: roboshop
   name: roboshop-junior
 rules:
-- apiGroups: [""]
-  resources: ["pods","deployments"]
+- apiGroups: ["apps"]
+  resources: ["deployments"]
   verbs: ["get", "watch", "list","create"]  
 ---
 apiVersion: rbac.authorization.k8s.io/v1
