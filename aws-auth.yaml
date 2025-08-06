@@ -1,0 +1,19 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::111122223333:role/my-role
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - groups:
+      - roboshop-trainee
+      userarn: arn:aws:iam::108717859359:user/James
+      username: James
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2025-08-06T07:40:59Z"
+  name: aws-auth
+  namespace: kube-system
+  uid: e87e56b0-aa52-4116-b395-931165b0204b
