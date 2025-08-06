@@ -22,3 +22,18 @@ roleRef:
   kind: Role 
   name:  sa-reader 
   apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aws-cli
+  namespace: roboshop
+  labels:
+    purpose: sa
+spec:
+  serviceAccount: roboshopmysqlsecretreader
+  containers:
+  - name: awscli
+    image: amazon/aws-cli
+    command: ["sleep","10000"]
