@@ -15,7 +15,7 @@ metadata:
   namespace: roboshop
 subjects:
 - kind: ServiceAccount
-  name: roboshopmysqlsecretreader
+  name: roboshop-mysql-secret-reader
   namespace: roboshop
 roleRef:
  
@@ -32,7 +32,7 @@ metadata:
   labels:
     purpose: sa
 spec:
-  serviceAccount: roboshopmysqlsecretreader
+  serviceAccount: roboshop-mysql-secret-reader
   containers:
   - name: awscli
     image: amazon/aws-cli
